@@ -1,0 +1,35 @@
+
+
+
+
+<div class="container">
+    <h2>Ubicación en tiempo real de vehículos</h2>
+    
+    <div class="form-check">
+        <input type="checkbox" class="form-check-input" id="check-connect>" (change)="checkBoxChangeEvent($event)">
+        <label class="form-check-label" for="check-connect">Conectar</label>
+      </div>
+
+              
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Placas de auto</th>
+          <th>Geolocalización</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let vehicle of vehicles">
+          <td>{{vehicle.placa}}</td>
+          <td>
+              <ul>
+                  <li *ngFor="let coordianate of vehicle.coordinates">{{coordianate}}</li>
+            
+                </ul>
+          </td>
+          
+        </tr>
+       
+      </tbody>
+    </table>
+  </div>
